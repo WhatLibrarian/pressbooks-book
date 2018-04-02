@@ -1,1 +1,81 @@
 // TODO
+
+#logo-pressbooks {
+  #pb {
+    fill: #fff;
+  }
+
+  #pressbooks {
+    fill: #000;
+  }
+}
+
+.fl-theme-wb {
+  #logo-pressbooks {
+    #pb {
+      fill: #000;
+    }
+
+    #roundrect {
+      fill: #fff;
+    }
+
+    #pressbooks {
+      fill: #fff;
+    }
+  }
+}
+
+.fl-theme-yb {
+  #logo-pressbooks {
+    #pb {
+      fill: #000;
+    }
+
+    #roundrect {
+      fill: #ff0;
+    }
+
+    #pressbooks {
+      fill: #ff0;
+    }
+  }
+}
+
+.fl-theme-by #logo-pressbooks {
+  #pb {
+    fill: #ff0 !important;
+  }
+
+  #roundrect {
+    fill: #000 !important;
+  }
+
+  #pressbooks {
+    fill: #000 !important;
+  }
+}
+
+.fl-theme-bw #logo-pressbooks {
+  #pb {
+    fill: #fff !important;
+  }
+
+  #roundrect {
+    fill: #000 !important;
+  }
+
+  #pressbooks {
+    fill: #000 !important;
+  }
+}
+
+.fl-theme-lgdg #logo-pressbooks {
+  #pressbooks {
+    fill: #bdbdbb;
+  }
+
+  #pb {
+    fill: #555;
+  }
+}

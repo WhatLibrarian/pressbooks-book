@@ -112,23 +112,7 @@ function pb_enqueue_assets() {
 	wp_enqueue_style( 'uio/separatedpanelprefseditor', $assets->getPath( 'styles/SeparatedPanelPrefsEditor.css' ), false, null );
 
 	wp_enqueue_script( 'sharer', $assets->getPath( 'scripts/sharer.js' ) );
-	wp_enqueue_script( 'uio', $assets->getPath( 'scripts/uio.js' ), [
-		// 'jquery',
-		// 'jquery-ui-core',
-		// 'jquery-ui-widget',
-		// 'jquery-ui-mouse',
-		// 'jquery-ui-accordion',
-		// 'jquery-ui-autocomplete',
-		// 'jquery-ui-slider',
-		// 'jquery-ui-tabs',
-		// 'jquery-ui-sortable',
-		// 'jquery-ui-draggable',
-		// 'jquery-ui-droppable',
-		// 'jquery-ui-datepicker',
-		// 'jquery-ui-resize',
-		// 'jquery-ui-dialog',
-		// 'jquery-ui-button',
-	], null );
+	wp_enqueue_script( 'uio', $assets->getPath( 'scripts/uio.js' ), [ 'jquery', 'jquery-ui-core' ], null );
 	wp_enqueue_script( 'pressbooks/book', $assets->getPath( 'scripts/book.js' ), [ 'jquery' ], null );
 	wp_localize_script(
 		'pressbooks/book',

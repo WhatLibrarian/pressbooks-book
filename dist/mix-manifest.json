@@ -1,11 +1,12 @@
 {
     "/scripts/book.js": "/scripts/book.js?id=d4b64867590bd260a7ee",
-    "/styles/book.css": "/styles/book.css?id=c238706f8d05aa0ff74a",
+    "/styles/book.css": "/styles/book.css?id=02add94b58f266a9e5c3",
     "/styles/web-house-style.css": "/styles/web-house-style.css?id=3e2cd5df535d045fcc20",
-    "/scripts/uio.js": "/scripts/uio.js?id=33c474c7cb5bb3b53f5e",
+    "/scripts/uio.js": "/scripts/uio.js?id=be5ab7a0c7544e23f0c5",
     "/scripts/sharer.js": "/scripts/sharer.js?id=b257fe1ee31a1838f343",
     "/styles/fluid.css": "/styles/fluid.css?id=cd21cc83b0eb6b938ff1",
     "/styles/Enactors.css": "/styles/Enactors.css?id=ed596a65937c7cfa808d",
     "/styles/PrefsEditor.css": "/styles/PrefsEditor.css?id=505dc5d688d6c646639a",
-    "/styles/SeparatedPanelPrefsEditor.css": "/styles/SeparatedPanelPrefsEditor.css?id=f725779d7848f4528e0f"
+    "/styles/SeparatedPanelPrefsEditor.css": "/styles/SeparatedPanelPrefsEditor.css?id=f725779d7848f4528e0f",
+    "/fonts/PrefsFramework-Icons.ttf": "/fonts/PrefsFramework-Icons.ttf?id=34ad789320ec7de06c42"
 }

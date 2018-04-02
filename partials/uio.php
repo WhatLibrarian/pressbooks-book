@@ -10,10 +10,10 @@
 <script type="text/javascript">
 	jQuery(document).ready(function () {
 		fluid.uiOptions.prefsEditor(".flc-prefsEditor-separatedPanel", {
-			tocTemplate: "<?php echo get_template_directory_uri(); ?>/node_modules/infusion/src/components/tableOfContents/html/TableOfContents.html",
+			tocTemplate: "<?php echo get_template_directory_uri(); ?>/lib/uio/toc/html/TableOfContents.html",
 			terms: {
-				templatePrefix: "<?php echo get_template_directory_uri(); ?>/node_modules/infusion/src/framework/preferences/html",
-				messagePrefix: "<?php echo get_template_directory_uri(); ?>/node_modules/infusion/src/framework/preferences/messages"
+				templatePrefix: "<?php echo get_template_directory_uri(); ?>/lib/uio/preferences/html",
+				messagePrefix: "<?php echo get_template_directory_uri(); ?>/lib/uio/preferences/messages"
 			}
 		});
 	})
