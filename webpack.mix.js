@@ -15,10 +15,27 @@ const dist = 'dist';
 
 mix
 	.setPublicPath( 'dist' )
+	.scripts(
+		'node_modules/infusion/dist/infusion-uio.js',
+		'dist/scripts/uio.js'
+	)
 	.scripts( 'node_modules/sharer.js/sharer.js', 'dist/scripts/sharer.js' )
 	.js( 'assets/src/scripts/book.js', 'dist/scripts/book.js' )
 	.sass( 'assets/src/styles/book.scss', 'dist/styles' )
 	.sass( 'assets/legacy/styles/web-house-style.scss', 'dist/styles' )
+	.copy( 'node_modules/infusion/src/framework/core/css/fluid.css', 'dist/styles' )
+	.copy(
+		'node_modules/infusion/src/framework/preferences/css/Enactors.css',
+		'dist/styles'
+	)
+	.copy(
+		'node_modules/infusion/src/framework/preferences/css/PrefsEditor.css',
+		'dist/styles'
+	)
+	.copy(
+		'node_modules/infusion/src/framework/preferences/css/SeparatedPanelPrefsEditor.css',
+		'dist/styles'
+	)
 	.copyDirectory( 'node_modules/buckram/assets/styles', 'assets/book/styles' )
 	.copyDirectory( 'node_modules/buckram/assets/images', 'assets/book/images' )
 	.copyDirectory( 'assets/src/images', 'dist/images' )

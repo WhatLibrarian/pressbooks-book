@@ -2,5 +2,10 @@
     "/scripts/book.js": "/scripts/book.js?id=d4b64867590bd260a7ee",
     "/styles/book.css": "/styles/book.css?id=c238706f8d05aa0ff74a",
     "/styles/web-house-style.css": "/styles/web-house-style.css?id=3e2cd5df535d045fcc20",
-    "/scripts/sharer.js": "/scripts/sharer.js?id=b257fe1ee31a1838f343"
+    "/scripts/uio.js": "/scripts/uio.js?id=33c474c7cb5bb3b53f5e",
+    "/scripts/sharer.js": "/scripts/sharer.js?id=b257fe1ee31a1838f343",
+    "/styles/fluid.css": "/styles/fluid.css?id=cd21cc83b0eb6b938ff1",
+    "/styles/Enactors.css": "/styles/Enactors.css?id=ed596a65937c7cfa808d",
+    "/styles/PrefsEditor.css": "/styles/PrefsEditor.css?id=505dc5d688d6c646639a",
+    "/styles/SeparatedPanelPrefsEditor.css": "/styles/SeparatedPanelPrefsEditor.css?id=f725779d7848f4528e0f"
 }

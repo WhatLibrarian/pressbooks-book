@@ -17,6 +17,7 @@
 	$schema = '';
 } ?>
 <body <?php body_class(); ?> <?php echo $schema; ?>>
+<?php get_template_part( 'partials/uio' ); ?>
 <svg style="position: absolute; width: 0; height: 0;" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
 	<defs>
 		<symbol id="icon-pressbooks" fill="currentColor" viewBox="0 0 45 44">

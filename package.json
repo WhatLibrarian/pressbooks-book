@@ -12,7 +12,8 @@
 	},
 	"dependencies": {
 		"aetna": "^1.0.0-alpha.17",
-		"buckram": "^0.7.3",
+    "buckram": "^0.7.3",
+    "infusion": "^3.0.0-dev",
 		"js-cookie": "^2.2.0",
 		"sharer.js": "^0.3.1"
 	},
