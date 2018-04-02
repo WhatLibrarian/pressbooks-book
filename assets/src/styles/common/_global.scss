@@ -24,6 +24,10 @@
       fill: #fff;
     }
   }
+
+  h2::before {
+    background: #fff;
+  }
 }
 
 .fl-theme-yb {
@@ -40,6 +44,10 @@
       fill: #ff0;
     }
   }
+
+  h2::before {
+    background: #ff0;
+  }
 }
 
 .fl-theme-by #logo-pressbooks {
@@ -53,6 +61,10 @@
 
   #pressbooks {
     fill: #000 !important;
+  }
+
+  h2::before {
+    background: #000;
   }
 }
 
@@ -68,6 +80,10 @@
   #pressbooks {
     fill: #000 !important;
   }
+
+  h2::before {
+    background: #000;
+  }
 }
 
 .fl-theme-lgdg #logo-pressbooks {
@@ -77,5 +93,9 @@
 
   #pb {
     fill: #555;
+  }
+
+  h2::before {
+    background: #bdbdbb;
   }
 }
