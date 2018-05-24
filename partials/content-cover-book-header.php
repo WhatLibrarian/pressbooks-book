@@ -1,40 +1,42 @@
 <section class="book-header">
 	<div class="book-header__inner">
-		<?php pb_get_links( false ); ?>
+		<?php \Pressbooks\Book\Helpers\get_links( false ); ?>
 		<h1 class="section__title book-header__title">
-			<?php bloginfo( 'name' ); ?>
+			<span class="screen-reader-text"><?php _e( 'Book Title', 'pressbooks-book' ); ?>: </span><?php bloginfo( 'name' ); ?>
 		</h1>
 		<?php if ( ! empty( $book_information['pb_subtitle'] ) ) : ?>
-			<p class="book-header__subtitle"><?php echo $book_information['pb_subtitle']; ?></p>
+			<p class="book-header__subtitle"><span class="screen-reader-text"><?php _e( 'Subtitle', 'pressbooks-book' ); ?>: </span><?php echo $book_information['pb_subtitle']; ?></p>
 		<?php endif; ?>
 		<?php if ( ! empty( $book_information['pb_authors'] ) ) { ?>
-			<p class="book-header__author">
-				<span class="fn"><?php echo $book_information['pb_authors']; ?></span>
-			</p>
+			<p class="book-header__author"><span class="screen-reader-text"><?php echo translate_nooped_plural( _n_noop( 'Author', 'Authors', 'pressbooks-book' ), \Pressbooks\Book\Helpers\count_authors( $book_information['pb_authors'] ), 'pressbooks-book' ); ?>: </span><?php echo $book_information['pb_authors']; ?></p>
 		<?php } ?>
 		<div class="book-header__cover">
 			<?php if ( ! empty( $book_information['pb_cover_image'] ) ) { ?>
 				<div class="book-header__cover__image">
-					<img src="<?php echo $book_information['pb_cover_image']; ?>" alt="book-cover" title="<?php bloginfo( 'name' ); ?> book cover" />
+					<?php /* translators: %s: title of book */ ?>
+					<img src="<?php echo $book_information['pb_cover_image']; ?>" alt="<?php printf( __( 'Cover image for %s', 'pressbooks-book' ), get_bloginfo( 'name' ) ); ?>" />
 				</div>
-			<?php }
+			<?php
+}
 
-			 /**
-				* @author Brad Payne <brad@bradpayne.ca>
-				* @copyright 2014 Brad Payne
-				* @since 1.6.0
-				*/
+			/**
+			 * @author Brad Payne <brad@bradpayne.ca>
+			 * @copyright 2014 Brad Payne
+			 * @since 1.6.0
+			 */
 
 			$files = \Pressbooks\Utility\latest_exports();
 
 			$site_option = get_site_option( 'pressbooks_sharingandprivacy_options', [ 'allow_redistribution' => 0 ] );
-			$option = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
-if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) ) { ?>
+			$option      = get_option( 'pbt_redistribute_settings', [ 'latest_files_public' => 0 ] );
+if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) && ( ! empty( $option['latest_files_public'] ) ) ) {
+?>
 				<div class="book-header__cover__downloads dropdown">
 
 					<p><?php _e( 'Download this book', 'pressbooks-book' ); ?></p>
 					<ul>
-					<?php foreach ( $files as $filetype => $filename ) :
+					<?php
+					foreach ( $files as $filetype => $filename ) :
 						$filename = preg_replace( '/(-\d{10})(.*)/ui', '$1', $filename );
 
 						// Rewrite rule
@@ -62,8 +64,8 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 					<?php endforeach; ?>
 					<ul>
 				</div>
-			<?php }?>
-				<?php if ( pb_social_media_enabled() ) { ?>
+			<?php } ?>
+				<?php if ( \Pressbooks\Book\Helpers\social_media_enabled() ) { ?>
 				<div class="book-header__share book-header__cover__share">
 					<?php echo \Pressbooks\Book\Helpers\share_icons(); ?>
 				</div>
@@ -72,11 +74,13 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 
 			<?php
 
-			if ( ! empty( $book_information['pb_about_50'] ) ) { ?>
-				<p class="book-header__description"><?php echo pb_decode( $book_information['pb_about_50'] ); ?></p>
+			if ( ! empty( $book_information['pb_about_50'] ) ) {
+			?>
+				<p class="book-header__description"><span class="screen-reader-text"><?php _e( 'Book Description', 'pressbooks-book' ); ?>: </span><?php echo pb_decode( $book_information['pb_about_50'] ); ?></p>
 			<?php } ?>
 		<?php global $first_chapter; ?>
 		<div class="book-header__license">
+			<span class="screen-reader-text"><?php _e( 'License', 'pressbooks-book' ); ?>: </span>
 			<?php $license = ( isset( $book_information['pb_book_license'] ) ) ? $book_information['pb_book_license'] : 'all-rights-reserved'; ?>
 			<div class="book-header__license__icons license-icons"><?php echo \Pressbooks\Book\Helpers\license_to_icons( $license ); ?></div>
 			<span class="book-header__license__text license-text"><?php echo \Pressbooks\Book\Helpers\license_to_text( $license ); ?></span>
@@ -85,21 +89,25 @@ if ( ! empty( $files ) && ( ! empty( $site_option['allow_redistribution'] ) ) &&
 			<?php if ( pb_get_first_post_id() ) { ?>
 			<a class="call-to-action" href="<?php echo $first_chapter; ?>">
 				<?php _e( 'Read Book', 'pressbooks-book' ); ?>
-			</a><?php
+			</a>
+			<?php
 }
 if ( array_filter( get_option( 'pressbooks_ecommerce_links', [] ) ) ) {
-	?><a class="call-to-action" href="<?php echo home_url( '/buy' ); ?>">
+	?>
+	<a class="call-to-action" href="<?php echo home_url( '/buy' ); ?>">
 <?php _e( 'Buy Book', 'pressbooks-book' ); ?>
-	</a><?php
-} ?>
+	</a>
+	<?php
+}
+?>
 		</div> <!-- end .call-to-action -->
-		<?php if ( pb_social_media_enabled() ) { ?>
+		<?php if ( \Pressbooks\Book\Helpers\social_media_enabled() ) { ?>
 		<div class="book-header__share">
 			<?php echo \Pressbooks\Book\Helpers\share_icons(); ?>
 		</div>
 		<?php } ?>
 		<?php
-		/**	Append content to cover book header block.
+		/** Append content to cover book header block.
 		 * @since 2.0.0
 		 */
 		do_action( 'pb_book_cover_after_book_header' );

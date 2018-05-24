@@ -50,6 +50,14 @@ h1.reading-header__title {
 .part,
 .chapter,
 .back-matter {
+  div[hidden] + h1:not(:first-of-type) {
+     margin-top: 0;
+  }
+
+  h1[data-collapsed="true"] {
+    margin-bottom: 0;
+  }
+
   .post-password-form {
     margin-top: 1rem;
 
@@ -401,6 +409,56 @@ h1.reading-header__title {
     @media #{$breakpoint-large} {
       margin-left: 1rem;
       margin-right: 0;
+    }
+  }
+}
+
+.button--text {
+  all: inherit;
+  border: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5em 0;
+
+  &:hover,
+  &:active {
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+  }
+
+  &:focus {
+    background: transparent;
+    color: inherit;
+    svg {
+      outline: 2px solid;
+    }
+  }
+
+  svg {
+    height: 1em;
+    margin-left: 0.5em;
+  }
+}
+
+[aria-expanded="true"] .vert {
+  display: none;
+}
+
+.no-navigation {
+  .header,
+  .nav-reading,
+  .footer {
+    display: none;
+  }
+
+  &.single {
+    #content {
+      box-sizing: border-box;
+      max-width: var(--reading-width);
+      width: 100%;
     }
   }
 }

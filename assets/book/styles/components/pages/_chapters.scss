@@ -9,25 +9,19 @@
 
 // License
 .chapter .license-attribution {
-  > p {
+  p {
     text-align: $section-license-align;
     line-height: $section-license-line-height;
     font-size: $section-license-font-size;
     font-style: $section-license-font-style;
     margin-top: $section-license-margin-top;
     page-break-inside: avoid;
+    text-indent: 0;
   }
 
   img {
-    margin-bottom: $section-license-image-margin-bottom;
-  }
-}
-
-@if $type == 'epub' {
-  @media amzn-mobi {
-    .chapter .license-attribution img {
-      width: $section-license-image-width !important;
-      height: $section-license-image-height !important;
-    }
+    background: transparent;
+    height: 2em;
+    width: auto;
   }
 }
