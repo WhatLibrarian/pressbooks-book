@@ -1,4 +1,8 @@
+/* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
+	/**
+	 *
+	 */
 	init() {
 		// JavaScript to be fired on all pages
 		document.body.classList.remove( 'no-js' );
@@ -66,6 +70,9 @@ export default {
 				// Handle list items and events
 				Array.prototype.forEach.call( links, link => {
 					// Collapse the content menu if user tabs out.
+					/**
+					 * @param e
+					 */
 					link.onblur = e => {
 						if ( link === links[links.length - 1] && e.relatedTarget.parentNode.nodeName !== 'LI' ) {
 							btn.setAttribute( 'aria-expanded', false );
@@ -77,7 +84,7 @@ export default {
 				let $svgArrow = jQuery( 'button[aria-expanded] > svg' );
 				let $toggleButton = jQuery( 'button[aria-expanded]' );
 
-				jQuery( $toggleButton, $svgArrow ).click( function ( e ) {
+				jQuery( $toggleButton, $svgArrow ).on( 'click', function ( e ) {
 					// Cast the state as a boolean
 					let expanded = btn.getAttribute( 'aria-expanded' ) === 'true' || false;
 
@@ -92,6 +99,9 @@ export default {
 					}
 				} );
 
+				/**
+				 * @param e
+				 */
 				document.onclick = e => {
 					const downloadClass = 'book-header__cover__downloads';
 					const $target = jQuery( e.target );
@@ -109,6 +119,9 @@ export default {
 					}
 				};
 
+				/**
+				 * @param e
+				 */
 				document.onkeydown = e => {
 					// Hide the content when 'Esc' key is pressed (and content is showing)
 					if ( e.which === 27 && ! content.hidden ) {
@@ -154,6 +167,9 @@ export default {
 				// Assign the button
 				let btn = entityTitle.querySelector( 'button' );
 
+				/**
+				 *
+				 */
 				btn.onclick = () => {
 					// Cast the state as a boolean
 					let expanded = btn.getAttribute( 'aria-expanded' ) === 'true' || false;
@@ -173,7 +189,7 @@ export default {
 			$( '#h5p-show-hide' ).text( $( '#h5p-show-hide' ).attr( 'show-all-text' ) );
 			$( '.h5p-row-item' ).text( $( '.h5p-row-item' ).attr( 'show-activity-text' ) );
 
-			$h5pActivities.click( function () {
+			$h5pActivities.on( 'click', function () {
 				if ( $( this ).text() === $( this ).attr( 'show-activity-text' ) ) {
 					$activityContainer.hide();
 					$( this ).closest( 'tr' ).next( this ).show( 'slow' );
@@ -185,7 +201,7 @@ export default {
 				}
 			} );
 
-			$( '#h5p-show-hide' ).click( function () {
+			$( '#h5p-show-hide' ).on( 'click', function () {
 				if ( $( this ).text() === $( this ).attr( 'show-all-text' ) ) {
 					$activityContainer.show();
 					$( this ).text( $( this ).attr( 'hide-all-text' ) );
@@ -201,6 +217,9 @@ export default {
 		} );
 
 	},
+	/**
+	 *
+	 */
 	finalize() {
 		// JavaScript to be fired on all pages, after page specific JS is fired
 	},
